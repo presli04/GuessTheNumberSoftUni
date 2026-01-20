@@ -20,7 +20,12 @@ while True:
         counter_of_failed_attemptss+=1
     if counter_of_failed_attemptss>=tries:
         print("Failed to guess the number.")
-        break
+        print("Do you want to play again?")
+        player_answer=input()
+        if player_answer=="yes":
+            tries+=1
+        else:
+            break
     if player_number==pc_number:
         print("Correct!")
         break
@@ -28,4 +33,5 @@ while True:
         print("Guess lower!")
     else:
         print("Guess higher!")
+
 

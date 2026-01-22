@@ -4,7 +4,7 @@ pc_number=random.randint(1,100)
 difficulty=input("Choose difficulty (eg. easy, medium, hard): ")
 tries=0
 counter_of_failed_attemptss=0
-rewards=0
+
 while True:
     players_input=input("Guess the number between 1 and 100: ")
     if difficulty=="easy":
@@ -18,17 +18,38 @@ while True:
         continue
     player_number=int(players_input)
     if difficulty=="easy" and player_number==pc_number:
-        rewards=10
-        print(f"You gueessed the number on {difficulty} and your reward is {rewards} BGN.Congrats")
-        break
+        for _ in range(1,tries):
+            if tries==1:
+                print(f"You guessed the number from the {tries} time.Bravo!You win 100 points ")
+                break
+            elif tries==2:
+                print(f"You guess the number from the {tries} time.Bravo!You win 90 points ")
+                break
+            elif tries == 3:
+                print(f"You guess the number from the {tries} time.Bravo!You win 80 points ")
+                break
+            elif tries==4:
+                print(f"You guess the number from the {tries} time.Bravo!You win 70 points ")
+                break
+            elif tries==5:
+                print(f"You guess the number from the {tries} time.Bravo!You win 60 points ")
+                break
     elif difficulty=="medium" and player_number==pc_number:
-        rewards=20
-        print(f"You guessed the number om {difficulty} and your reward is {rewards} BGN.Congrats")
-        break
+        for _ in range(1,tries):
+            if tries == 1:
+                print(f"You guessed the number from the {tries} time.Bravo!You win 150 points ")
+                break
+            elif tries == 2:
+                print(f"You guess the number from the {tries} time.Bravo!You win 140 points ")
+                break
+            elif tries == 3:
+                print(f"You guess the number from the {tries} time.Bravo!You win 130 points ")
+                break
     elif difficulty=="hard" and player_number==pc_number:
-        rewards=50
-        print(f"You guessed the number on {difficulty} and your reward is {rewards} BGN.Congrats")
-        break
+        for _ in range(1, tries):
+            if tries == 1:
+                print(f"You guessed the number from the {tries} time.Bravo!You win 500 points ")
+                break
     if player_number!=pc_number:
         counter_of_failed_attemptss+=1
     if counter_of_failed_attemptss>=tries:
